@@ -1,1 +1,11 @@
-
+/frontend
+    /public
+        index.html
+    /src
+        /components
+            Dashboard.js
+            TicketList.js
+            TicketForm.js
+        App.js
+        index.js
+    package.json
