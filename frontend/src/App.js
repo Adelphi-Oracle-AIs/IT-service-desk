@@ -1,4 +1,18 @@
 // src/App.js
+import CyberBackground from './components/CyberBackground';
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <CyberBackground />
+      <Router>
+        {/* ... rest of the code ... */}
+      </Router>
+    </ThemeProvider>
+  );
+}
+// src/App.js
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
 
 let theme = createMuiTheme({
