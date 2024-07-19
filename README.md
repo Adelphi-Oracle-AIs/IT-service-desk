@@ -1,5 +1,3 @@
-# IT-service-desk
-IT Service Desk app
 # IT Service Desk Software
 
 ## Overview
