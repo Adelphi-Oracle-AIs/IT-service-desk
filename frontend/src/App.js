@@ -1,4 +1,45 @@
 // src/App.js
+import { createMuiTheme, responsiveFontSizes } from '@material-ui/core/styles';
+
+let theme = createMuiTheme({
+  palette: {
+    type: 'dark',
+    primary: {
+      main: '#00ff00', // Neon green
+    },
+    secondary: {
+      main: '#0099ff', // Bright blue for contrast
+    },
+    background: {
+      default: '#000000',
+      paper: '#111111',
+    },
+  },
+  overrides: {
+    MuiCssBaseline: {
+      '@global': {
+        body: {
+          backgroundImage: 'linear-gradient(rgba(0, 255, 0, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 0, 0.1) 1px, transparent 1px)',
+          backgroundSize: '20px 20px',
+          '&::after': {
+            content: '""',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            backgroundImage: 'radial-gradient(rgba(0, 255, 0, 0.1) 2px, transparent 2px)',
+            backgroundSize: '50px 50px',
+            pointerEvents: 'none',
+          },
+        },
+      },
+    },
+  },
+});
+
+theme = responsiveFontSizes(theme);
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
