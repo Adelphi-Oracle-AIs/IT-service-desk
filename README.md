@@ -1,3 +1,167 @@
+# IT Service Desk
+
+A full-featured IT service desk application with GitHub OAuth authentication, ticket management system, and a modern React frontend.
+
+![IT Service Desk Screenshot](docs/screenshot.png)
+
+## Features
+
+- **User Authentication**: GitHub OAuth integration for seamless login
+- **Ticket Management**: Create, update, and track support tickets 
+- **Role-Based Permissions**: Different access levels for users, agents, and admins
+- **Real-time Updates**: Track ticket status changes and new comments
+- **Responsive Design**: Works on desktop, tablet, and mobile devices
+- **Modern UI**: Clean and user-friendly interface with Playfair font and custom yellow/blue theme
+
+## Technology Stack
+
+### Backend
+- Node.js + Express
+- MongoDB with Mongoose
+- Passport.js for authentication
+- Express Session for session management
+
+### Frontend
+- React with React Router
+- Material-UI components library
+- Axios for API requests
+- Context API for state management
+
+## Getting Started
+
+### Prerequisites
+- Node.js 16+ and npm
+- MongoDB
+- GitHub OAuth application credentials
+
+### Environment Setup
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/Adelphi-Oracle-AIs/IT-service-desk.git
+   cd IT-service-desk
+   ```
+
+2. Create a GitHub OAuth application
+   - Go to your GitHub account settings
+   - Navigate to Developer settings > OAuth Apps > New OAuth App
+   - Set the Authorization callback URL to `http://localhost:5000/api/auth/github/callback`
+   - Note the Client ID and Client Secret
+
+3. Create environment variables
+   - Copy the `.env.example` file to `.env`
+   - Update with your GitHub credentials and other settings:
+     ```
+     GITHUB_CLIENT_ID=your_client_id
+     GITHUB_CLIENT_SECRET=your_client_secret
+     ```
+
+### Installation
+
+#### Method 1: Local Installation
+
+1. Install backend dependencies
+   ```bash
+   cd backend
+   npm install
+   ```
+
+2. Install frontend dependencies
+   ```bash
+   cd ../frontend
+   npm install
+   ```
+
+3. Start the development servers
+   
+   In the backend directory:
+   ```bash
+   npm run dev
+   ```
+   
+   In the frontend directory:
+   ```bash
+   npm start
+   ```
+
+4. Access the application at `http://localhost:3000`
+
+#### Method 2: Using Docker Compose
+
+1. Start all services
+   ```bash
+   docker-compose up
+   ```
+
+2. Access the application at `http://localhost:3000`
+
+## Deployment
+
+### Building for Production
+
+1. Build the frontend
+   ```bash
+   cd frontend
+   npm run build
+   ```
+
+2. The built files will be copied to the backend's public directory
+
+3. Start the production server
+   ```bash
+   cd ../backend
+   npm start
+   ```
+
+### Docker Deployment
+
+You can also build and deploy using the provided Dockerfile:
+
+```bash
+docker build -t it-service-desk .
+docker run -p 5000:5000 -e MONGODB_URI=your_mongodb_uri -e GITHUB_CLIENT_ID=your_client_id -e GITHUB_CLIENT_SECRET=your_client_secret it-service-desk
+```
+
+## Project Structure
+
+```
+IT-service-desk/
+├── backend/
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── models/
+│   ├── routes/
+│   └── server.js
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── context/
+│       ├── services/
+│       └── styles/
+├── docker-compose.yml
+└── Dockerfile
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -m 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgements
+
+- Developed by Adelphi University Oracle AIS team
+- Design inspired by modern help desk solutions
+- Built with open source tools and libraries
+
 # IT Service Desk Software
 
 ## Overview
